@@ -106,7 +106,7 @@ function update(req, res, next) {
   const data = res.locals.body;
   const foundDish = res.locals.dish;
   for (const key in data) {
-    if (data.hasOwnProperty(key)) {
+    if (key !== "id" && data.hasOwnProperty(key)) {
       foundDish[key] = data[key];
     }
   }
